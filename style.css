@@ -1,0 +1,109 @@
+:root {
+    --main-cl: #323334;
+    --bg-cl-1: rgba(219, 208, 204, 0.8);
+    --bg-cl-2: #EAE9E7;
+    --bg-cl-3: rgba(0, 0, 0, 0.4);
+    --bg-cl-4: #FAFAFA;
+    --text-cl-1: #A86A3D;
+    --text-cl-2: rgba(0, 0, 0, 0.5);
+    --boder-bottom: 1px var(--main-cl) solid;
+}
+
+body {
+    font-family: 'Roboto', 'Sand-serif';
+    font-weight: 700;
+}
+
+.container {
+    width: 1296px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header-wrapper {
+    margin-top: 34px;
+    margin-bottom: 34px;
+    display: grid;
+    grid-template-areas: 'logo icon'
+    'menu menu'
+    'service service';
+}
+
+.header__logo {
+    border-bottom: var(--boder-bottom);
+    text-decoration: none ;
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    grid-area: logo;
+    padding-bottom: 19px;
+}
+
+.header__icons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 37px;
+    padding-bottom: 19px;
+    border-bottom: var(--boder-bottom);
+    grid-area: icon;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart:before {
+    content: "3";
+    background-color: #F2994A;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    font-size: 50%;
+    color: #FAFAFA;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header__main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 39px;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-bottom: var(--boder-bottom);
+    flex-wrap: wrap;
+    grid-area: menu;
+}
+
+.header__main-menu>input[type='radio']:checked + label,
+.header__main-menu>input[type='radio']:hover + label {
+    color: var(--text-cl-1);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.header__service {
+    grid-area: service;
+}
+
+.header__service > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--text-cl-2);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header__service>ul>li>a>span {
+    margin-left: 14px;
+}
