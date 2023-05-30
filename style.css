@@ -107,3 +107,95 @@ body {
 .header__service>ul>li>a>span {
     margin-left: 14px;
 }
+
+.hero {
+    background-color: var(--bg-cl-1);
+    width: 100vw;
+    height: 566px;
+
+}
+
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    transform: translateX(-20px);
+}
+
+.hero__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.hero__text {
+    margin-left: 12px;
+    display: block;
+}
+
+.hero__text>span {
+    font-size: 48px;
+    color: var(--text-cl-1);
+    display: block;
+    margin-top: 25px;
+}
+
+.btn {
+    min-width: 124px;
+    min-height: 48px;
+    border: 1px var(--main-cl) solid;
+    display: block;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 16px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.hero__text .view-now {
+    margin-top: 40px;
+    margin-left: 13px;
+}
+
+.btn:hover {
+    background-color: var(--main-cl);
+    color: var(--text-cl-1);
+    border-color: var(--text-cl-1);
+}
+
+.feature-collection {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px;
+    margin-top: 23px;
+    margin-bottom: 23px;
+    height: 368px;
+}
+
+.feature-collection .collection-1 {
+    background-color: var(--bg-cl-4);
+}
+
+.feature-collection .collection-2 {
+    background-color: var(--bg-cl-2);
+}
+
+.feature-collection>.hero-wrapper>.hero__image>img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.feature-collection>.hero-wrapper {
+
+}
+
+.feature-collection .view-details {
+    margin-left: 0;
+    margin-top: 40px;
+}
