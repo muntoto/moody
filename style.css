@@ -7,6 +7,8 @@
     --text-cl-1: #A86A3D;
     --text-cl-2: rgba(0, 0, 0, 0.5);
     --boder-bottom: 1px var(--main-cl) solid;
+    --rating-star: #F2C94C;
+    --star: #
 }
 
 body {
@@ -20,9 +22,29 @@ body {
     margin: 0 auto;
 }
 
+.header {
+    /* position: sticky;
+    -webkit-mask-position: sticky; */
+    top: 0;
+    background-color: #FAFAFA;
+    z-index: 2;
+}
+@media screen and (max-width: 989px) {
+    .header-wrapper {
+        grid-template-areas: 'logo'
+        'service';
+    }
+    .header__main-menu {
+        display: none;
+    }
+
+    .header__icons {
+        display: none;
+    }
+}
+
 .header-wrapper {
     margin-top: 34px;
-    margin-bottom: 34px;
     display: grid;
     grid-template-areas: 'logo icon'
     'menu menu'
@@ -73,7 +95,8 @@ body {
 
 .header__main-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 69px;
     align-items: center;
     padding: 39px;
     text-transform: uppercase;
@@ -119,7 +142,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    transform: translateX(-20px);
 }
 
 .hero__image {
@@ -153,6 +175,7 @@ body {
     padding: 16px;
     transition: all ease 0.2s;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .hero__text .view-now {
@@ -199,3 +222,76 @@ body {
     margin-left: 0;
     margin-top: 40px;
 }
+
+/* product */
+.product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+}
+
+.product-info {
+    margin-top: 32px;
+    margin-left: 5px;
+}
+
+.product__title {
+    font-size: 18px;
+    text-transform: capitalize;
+    display: block;
+}
+
+.product__star-rating {
+    display: block;
+    margin-top: 13px;
+    height: 15px;
+    width: auto;
+}
+.product__star-rating>.rate {
+    display: flex;
+    height: 15px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label>svg>path {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font: size 15px;
+    color:#ccc;
+}
+
+.rate:not(:checked) > label:before {
+    content: "";
+}
+
+.rate > input:checked ~ label>svg>path {
+    fill: var(--rating-star);
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover >label>svg>path{
+    fill: var(--rating-star);
+
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label>svg>path,
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > label:hover + input:checked ~ label> svg>path {
+    fill: var(--rating-star);
+}
+
+.product__price {
+    display: block;
+    font-size: 24px;
+    margin-top: 19px;
+}
+
