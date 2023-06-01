@@ -8,7 +8,7 @@
     --text-cl-2: rgba(0, 0, 0, 0.5);
     --boder-bottom: 1px var(--main-cl) solid;
     --rating-star: #F2C94C;
-    --star: #
+    --star: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -254,40 +254,31 @@ body {
     justify-content: flex-end;
     gap: 4px;
 }
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label>svg>path {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font: size 15px;
-    color:#ccc;
+
+.rate:not(:checked) >label,
+.rate:not(:checked) >label::before{
+    cursor: pointer;
 }
 
-.rate:not(:checked) > label:before {
-    content: "";
+.rate>label:before
+ {
+    content: url(/Assets/rating-star.svg);
 }
 
-.rate > input:checked ~ label>svg>path {
+.rate>label:before
+
+/* 
+.rate:not(:checked) ~label:before>svg>path {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    fill: var(--star);
+}
+
+.rate > input:checked ~label:before>svg>path {
     fill: var(--rating-star);
-}
-
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover >label>svg>path{
-    fill: var(--rating-star);
-
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label>svg>path,
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > label:hover + input:checked ~ label> svg>path {
-    fill: var(--rating-star);
-}
+} */
 
 .product__price {
     display: block;
